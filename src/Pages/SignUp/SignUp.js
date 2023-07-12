@@ -1,29 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import {useContext} from 'react';
+
 
 
 const SignUp = () => {
-const {createUser} = useContext(AuthContext)
-    const handleSignUp = (event) =>{
-        event.preventDefault()
-        const form = event.target ;
-        const email = form.email.value;
-        const password = form.password.value;
-        
-        createUser(email, password)
-        .then(result =>{
-            const user = result.user ;
-            console.log(user)
+  const {createUser} = useContext(AuthContext)
 
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    }
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
+    createUser(email, password)
+    .then(result=>{
+      const user = result.user;
+      console.log(user)
+    })
+    .catch(err=>console.log(err))
+  }
 
     return (
         <div className="hero w-full ">
@@ -33,7 +31,8 @@ const {createUser} = useContext(AuthContext)
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 text-center py-20">
     <h1 className="text-5xl font-bold">Sign Up!</h1>
-      <form onSubmit={handleSignUp} className="card-body">
+    
+      <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Your Name</span>

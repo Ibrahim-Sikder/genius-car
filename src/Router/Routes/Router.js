@@ -4,9 +4,10 @@ import Main from '../../layout/Main';
 import CheckOut from '../../Pages/CheckOut/CheckOut';
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login';
-import Order from '../../Pages/Order/Order';
 import SignUp from '../../Pages/SignUp/SignUp';
-import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import Order from '../../Pages/Order/Order';
+import PrivateRoute from './PrivateRoute';
+
 
   const router = createBrowserRouter([
     {
@@ -32,8 +33,8 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
         },
         {
           path:'/order',
-          element: <PrivateRoute><Order></Order></PrivateRoute>
-        }
+          element: <Order></Order>
+        },
         
       ]
     

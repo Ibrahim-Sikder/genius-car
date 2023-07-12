@@ -7,7 +7,8 @@ const Services = () => {
     const [services, setServices ] = useState([]);
     const [isAsc, setIsAsc] =useState(true);
    useEffect(()=>{
-    fetch(`http://localhost:5000/services?order=${isAsc ? 'asc' : 'desc'}`)
+    // fetch(`http://localhost:5000/services?order=${isAsc ? 'asc' : 'desc'}`)
+    fetch('http://localhost:5000/services')
     .then(res => res.json())
     .then(data => setServices(data))
    },[isAsc])
