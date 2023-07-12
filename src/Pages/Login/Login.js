@@ -57,7 +57,7 @@ const Login = () => {
         <img className='w-3/5 ' src={img} alt="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 text-center py-20">
-    <h1 className="text-5xl font-bold">Login!</h1>
+    <h1 className="text-5xl font-bold">Please Login now!</h1>
 
       <form onSubmit={handleLogin} className="card-body">
         <div className="form-control">
